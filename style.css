@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+section {   
+    display: flex;
+    margin: 150px auto; 
+    justify-content: center;/* alinhou o card no meio da tela eixo x*/
+}
+
+.face{
+    width: 320px;
+    height: 350px;
+    perspective: 700px;
+   
+}
+
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 700ms;    
+}
+
+.front{
+    background-color: #d1d1d1;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.front h2 {
+    margin-top: 80px;
+}
+
+.front img {
+    margin-top: 20px;
+}
+
+.back{
+    background-color: aquamarine;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+}
+
+.back ul{
+    margin-top: 80px;
+}
+
+.face:hover .front {
+    transform: rotateY(180deg);
+    z-index: 0;
+}
+
+.face:hover .back{
+    transform: rotateY(0);
+    z-index: 1;
+}
